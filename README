@@ -1,0 +1,40 @@
+--Project Title --
+A simple project to illustrate using SpringJPA and RESTful java Services.
+
+It uses SpringJPA , Java and PostgreSQL to store user request information in a database and provide a way of retrieving them via http endpoints.
+The data is also encrypted with JPA Converters to ensure security.
+For integrity purposes , the encryption key is configured to be provided as a parameter or stored in the application properties file.
+
+-- Getting Started --
+This is a ready project which can run in any platform with the required prequisites. 
+
+-- Prequisites --
+        An IDE of your Choice e.g Gradle/Eclipse/IntelliJ IDE..
+        JDK 6 +
+        Maven -If not installed, donload the package from maven website.
+        Spring Configuration for IDE is optional.
+        Running RabbitMQ Server.
+        PostgreSQL database with privileges.
+
+-- Installing --
+Since this is a ready to run project, you only need to download it and place in a preffered woking directory.
+cd into the directory and run mvn install.
+If all is well, a successful build message is displayed.
+Run the project with mvn sprinb-boot:run
+This should fire the project on port 8080 at localhost
+
+--Running the Tests --
+Open your browser and run a sample http request to the REST endpoint
+e.g to add a new request
+         localhost:8080/add?name=update&type=data_change&details=changed name from willy to wilfred
+To get a list of all stored requests
+  localhost:8080/findall
+ 
+
+To get a specific stored request by ID
+          localhost:8080/findbyid
+
+Ivoke a health check at endpoint:
+   localhost:8080/health and
+   localhost:8080/metrics
+NOTE : metrics can be accessed by only users with ACTUATOR role as set in secuirty Config. 

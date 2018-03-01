@@ -23,7 +23,7 @@ public class WebController{
 		// save a single Customer
 		repository.save(new Request(name, type, details));
 		
-		return "User added";
+		return "Requested logged";
 	}
 	
 	@RequestMapping("/findall")
